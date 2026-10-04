@@ -1,0 +1,7 @@
+{
+  "complygraph-regulatory": {
+    "command": "python",
+    "args": ["-m", "complygraph.mcp_server"],
+    "transport": "stdio"
+  }
+}

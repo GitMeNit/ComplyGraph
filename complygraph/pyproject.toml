@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "complygraph"
+version = "0.1.0"
+description = "Multi-agent regulatory compliance copilot (LangGraph + MCP + LlamaIndex) with guardrails, HITL approvals and tamper-evident audit"
+requires-python = ">=3.10"
+dependencies = ["pyyaml>=6", "pydantic>=2"]
+
+[project.optional-dependencies]
+agents = ["langgraph>=0.2", "langchain-core>=0.3", "langchain-mcp-adapters>=0.1", "mcp[cli]>=1.2"]
+rag    = ["llama-index-core>=0.11", "llama-index-embeddings-huggingface"]
+llm    = ["anthropic>=0.40", "openai>=1.50"]
+serve  = ["fastapi>=0.110", "uvicorn[standard]>=0.29", "streamlit>=1.35"]
+dev    = ["pytest>=8", "ruff>=0.5", "httpx>=0.27"]
+all    = ["complygraph[agents,rag,llm,serve]"]
+
+[project.scripts]
+complygraph = "complygraph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 130

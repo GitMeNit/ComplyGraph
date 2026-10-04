@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    ports: ["8000:8000"]
+    volumes: ["state:/app/.state"]
+  ui:
+    build: .
+    env_file: .env
+    command: streamlit run src/complygraph/ui.py --server.port 8501 --server.address 0.0.0.0
+    ports: ["8501:8501"]
+    volumes: ["state:/app/.state"]
+volumes:
+  state:

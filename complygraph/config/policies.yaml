@@ -1,0 +1,22 @@
+# Runtime guardrail + governance policy. Version-controlled; changes go through PR review.
+version: "1.0"
+input:
+  max_chars: 8000
+  block_patterns:
+    - "ignore (all |any |the )?(previous|prior|above) (instructions|rules|policies)"
+    - "disregard (your|the|all) (rules|policies|guidelines|instructions)"
+    - "reveal (your|the) (system|hidden) prompt"
+    - "you are now (in )?(developer|dan|jailbreak) mode"
+    - "act as (an? )?(unrestricted|uncensored)"
+output:
+  require_citations: true
+  forbidden_phrases:
+    - "guaranteed compliant"
+    - "fully compliant with all"
+    - "no regulatory risk"
+    - "this constitutes legal advice"
+  disclaimer: "Decision support only. Not legal advice. Findings require review by qualified compliance counsel before action."
+governance:
+  approval_required_tiers: [high, critical]
+  review_on_abstain: true
+  four_eyes: true            # requester may never approve their own output (maker-checker)
