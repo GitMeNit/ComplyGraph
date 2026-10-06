@@ -8,9 +8,6 @@ It answers regulatory questions with citations, scans code/config for control ga
 high-risk output for a second human** before release - with every step recorded in a hash-chained audit log.
 ![Alt text](images/audit_trail.png)
 
-
-
-![Alt text](images/already_approved.png)
 ## Why this shape 
 
 | Buyer concern | How it is addressed |
