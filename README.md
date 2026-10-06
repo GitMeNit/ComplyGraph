@@ -6,7 +6,7 @@ maker-checker human approval · tamper-evident audit trail · declarative regula
 
 It answers regulatory questions with citations, scans code/config for control gaps, rates risk, and **holds
 high-risk output for a second human** before release - with every step recorded in a hash-chained audit log.
-![Alt text](images/audit.trail.png)
+![Alt text](images/audit_trail.png)
 
 
 
